@@ -1,0 +1,66 @@
+.title {
+  text-align: center;
+  font-family: nunito;
+  color: Teal;
+  font-weight: bold;
+}
+
+table, th, td {
+   border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0 auto;
+  font-family: nunito;
+  
+  padding: 8px;
+}
+
+body {
+  background-color: Snow;
+}
+
+th {
+  background-color: Teal;
+  color: white;
+}
+
+tr:nth-child(even) {background-color: Gainsboro;}
+
+.helvetica {
+  font-family: nunito;
+}
+
+span {
+  font-weight: bold;
+}
+
+.description {
+  padding: 5%;
+}
+
+.topnav {
+  background-color: SteelBlue;
+  overflow: hidden;
+  font-family: nunito;
+  
+    
+
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 17px;
+  display: flex; 
+  justify-content: center 
+  
+}
+ 
+.topnav a:hover {
+  background-color: Snow;
+  color: black;
+}
+
+

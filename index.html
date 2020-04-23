@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      CSS Selectors and Specificty Reference
+    </title>
+    <link type="text/css" rel="stylesheet" href="styles.css"/>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+</style>
+
+<div class="topnav">
+  <a class="active" href="#css selectors">CSS Selectors</a>
+  <a href="#specificity">Specificity</a>
+  <a href="#hierarchy">Hierarchy</a>
+  <a href="#calculate">Calculate</a>
+  
+</div>
+  </head>
+  
+  <body>
+    <h1 class="title">
+      CSS Selectors and Specificity Reference
+    </h1>
+    
+    <div class="description">
+    <h2 class="helvetica" id="css selectors">CSS Selectors</h2>
+    <p class="helvetica">
+      In CSS, selectors are patterns used to select the element(s) you want to style.
+    </p>
+    <br>
+    <h2 class="helvetica" id="specificity">What is Specificity?</h2>
+    <p class="helvetica">
+      If there are two or more conflicting CSS rules that point to the same element, the browser follows some rules to determine which one is most specific and therefore wins out.
+<br>
+<br>
+Think of specificity as a score/rank that determines which style declarations are ultimately applied to an element.
+    </p>
+
+    <h2 class="helvetica" id="hierarchy">Specificity Hierarchy</h2>
+    <p class="helvetica">
+      Every selector has its place in the specificity hierarchy. There are four categories which define the specificity level of a selector:
+<br>
+<br>
+<span>Inline styles</span> - An inline style is attached directly to the element to be styled. Example: &lt;h1 style="color: #ffffff;"&gt;.
+<br>
+<br>
+<span>IDs</span> - An ID is a unique identifier for the page elements, such as #navbar.
+<br>
+<br>
+<span>Classes, attributes and pseudo-classes</span> - This category includes .classes, [attributes] and pseudo-classes such as :hover, :focus etc.
+<br>
+<br>
+<span>Elements and pseudo-elements</span> - This category includes element names and pseudo-elements, such as h1, div, :before and :after.
+    </p>
+    <h2 class="helvetica" id="calculate">How to Calculate Specificity?</h2>
+    <p class="helvetica">
+      Memorize how to calculate specificity!
+<br>
+<br>
+Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element.
+<br>
+<br>
+Consider these three code fragments:
+<br>
+<br>
+A: h1
+<br>
+<br>
+B: #content h1
+<br>
+<br>
+C: &lt;div id="content"&gt;&lt;h1 style="color: #ffffff"&gt;Heading&lt;/h1&gt;&lt;/div&gt;
+<br>
+<br>
+The specificity of A is 1 (one element)<br>
+The specificity of B is 101 (one ID reference and one element)<br>
+The specificity of C is 1000 (inline styling)
+<br><br>
+Since 1 &lt; 101 &lt; 1000, the third rule (C) has a greater level of specificity, and therefore will be applied.
+
+<br>
+<br>
+The table below provides examples of selectors and their corresponding specificity level.
+    </p>
+    </div>
+    <div style="overflow-x:auto;">
+    <table>
+      <tr class="row1">
+        <th>Selector</th>
+        <th>Example</th>
+        <th>Example Description</th>
+        <th>Specificity Level</th>
+      </tr>
+      
+      <tr class="row">
+        <td>element</td>
+        <td>p</td>
+        <td>selects all &lt;p&gt; elements</td>
+        <td>1</td>
+      </tr>
+      
+      <tr class="row">
+        <td>.class</td>
+        <td>.intro</td>
+        <td>selects all elements with class="intro"</td>
+        <td>10</td>
+      </tr>
+      
+      <tr class="row">
+        <td>.class1.class2</td>
+        <td>.name1.name2</td>
+        <td>selects all elements with both name1 and name2 set within its class attribute</td>
+        <td>20</td>
+      </tr>
+      
+      <tr>
+        <td>element, element</td>
+        <td>div, p</td>
+        <td>selects all &lt;div&gt; elements and all &lt;p&gt; elements</td>
+        <td>2</td>
+      </tr>
+      
+      <tr>
+        <td>element element</td>
+        <td>div p</td>
+        <td>selects all &lt;p&gt; elements within a &lt;div&gt; element</td>
+        <td>2</td>
+      </tr>
+      
+      <tr>
+        <td>element.class</td>
+        <td>p.intro</td>
+        <td>selects all &lt;p&gt; elements with class="intro"</td>
+        <td>11</td>
+      </tr>
+      
+      <tr>
+        <td>#id</td>
+        <td>#firstname</td>
+        <td>selects element with id="first name"</td>
+        <td>100</td>
+      </tr>
+      
+    </table>
+    </div>
+    
+  </body>
+</html>
